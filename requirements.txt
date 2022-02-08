@@ -1,0 +1,3 @@
+deepdiff
+marshmallow
+pytest
