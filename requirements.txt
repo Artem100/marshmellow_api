@@ -1,3 +1,4 @@
 deepdiff
 marshmallow
 pytest
+requests
