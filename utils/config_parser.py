@@ -4,8 +4,9 @@ from copy import deepcopy
 class ConfigParserCustom:
 
     def __init__(self, some_config_path):
-        self.some_config_path = some_config_path
+        # self.some_config_path = some_config_path
         self._cfg = {}
+        self._read_config(some_config_path)
 
     # def _read_config(self, section):
     #     """My realization"""
@@ -22,7 +23,7 @@ class ConfigParserCustom:
 
     def _read_config(self, file_obj):
         parser = ConfigParser()
-        parser.read(file_obj)
+        parser.read_file(file_obj)
         for section in parser.sections():
             self._cfg[section] = {}
             for var, val in parser[section].items():

@@ -7,5 +7,5 @@ class RequesterCustom():
         self.headers = header
 
     def post_data(self, json_data):
-        response = requests.post(self.url, headers=self.headers)
+        response = requests.post(self.url, headers=self.headers, json=json_data)
         return response
