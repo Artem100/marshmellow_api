@@ -34,9 +34,10 @@ try:
     received_data = json.loads(response.text)
     PostsSchema().load(received_data)
 
-    res = DeepDiff(json_data, received_data, ignore_order=True, exclude_paths="root['id!']")
+    res = DeepDiff(json_data, received_data, ignore_order=True, exclude_paths="root['id']")
+
     if res:
-        sys.stderr.write(res)
+        sys.stderr.write(str(res))
         sys.exit(ExitCodes.DIFF_ERROR)
 
 
